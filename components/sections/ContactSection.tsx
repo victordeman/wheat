@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema, ContactFormData } from "@/lib/validation";
@@ -27,6 +27,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -38,6 +39,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
       message: "",
     },
   });
+
+  useEffect(() => {
+    if (defaultPathway) {
+      setValue("pathway", defaultPathway as any);
+    }
+  }, [defaultPathway, setValue]);
 
   const onSubmit = async (data: ContactFormData) => {
     setSubmitting(true);
