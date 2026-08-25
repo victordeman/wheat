@@ -68,6 +68,7 @@ export const Header: React.FC = () => {
               <Link
                 key={link.name}
                 href={link.href}
+                aria-current={isActive ? "page" : undefined}
                 className={`text-xs uppercase tracking-wider font-medium transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-xs ${
                   isActive
                     ? "text-brand-gold font-semibold border-b-2 border-brand-gold"
@@ -129,6 +130,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
+                  aria-current={isActive ? "page" : undefined}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm uppercase tracking-wider font-medium py-1.5 border-b border-brand-green-light/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
                     isActive ? "text-brand-gold font-semibold" : "text-gray-200 hover:text-brand-gold"

@@ -5,10 +5,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "wheatness-test.vercel.app",
-      },
-      {
-        protocol: "https",
         hostname: "images.unsplash.com",
       },
     ],

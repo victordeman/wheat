@@ -1,30 +1,22 @@
-"use client";
-
+import { Metadata } from "next";
 import React, { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { ContactFormData } from "@/lib/validation";
+import { ContactSectionClient } from "@/components/sections/ContactSectionClient";
 
-function ContactFormWrapper() {
-  const searchParams = useSearchParams();
-  const rawPathway = searchParams.get("pathway");
-  const validPathways: ContactFormData["pathway"][] = ["millers", "msmes", "investors", "public"];
-  const pathway: ContactFormData["pathway"] = validPathways.includes(rawPathway as ContactFormData["pathway"])
-    ? (rawPathway as ContactFormData["pathway"])
-    : "public";
-
-  return <ContactSection defaultPathway={pathway} />;
-}
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Official correspondence channel for Project WHEAT-NESS Programme Delivery Unit.",
+};
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-brand-canvas">
       <Header />
-      <main className="flex-grow">
-        <Suspense fallback={<div className="py-20 text-center">Loading contact options...</div>}>
-          <ContactFormWrapper />
+      <main id="main-content" className="flex-grow">
+        <Suspense fallback={<div className="py-20 text-center text-gray-600 font-medium">Loading contact options...</div>}>
+          <ContactSectionClient />
         </Suspense>
       </main>
       <Footer />

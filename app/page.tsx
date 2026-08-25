@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -8,21 +6,27 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ArrowRight, BookOpen, Layers, Users, Mail } from "lucide-react";
 import { Card, Button } from "@/components/ui";
 
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Official digital front door for Project WHEAT-NESS — Nigeria's national programme to optimise the wheat-based consumer foods value chain.",
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-brand-canvas">
       <Header />
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {/* Short Hero (includes headline, subhead, 2 CTAs, and compact 4-stat strip) */}
         <HeroSection />
 
         {/* Short "What is WHEAT-NESS?" Summary Blurb */}
-        <section className="py-16 bg-white border-b border-brand-border">
+        <section className="py-16 sm:py-20 bg-white border-b border-brand-border">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-gold-deep">
               Programme Overview
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-dark">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark">
               What is Project WHEAT-NESS?
             </h2>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-sans">
@@ -32,7 +36,7 @@ export default function Home() {
         </section>
 
         {/* Three Entry Cards: About, The Programme, Get Involved */}
-        <section className="py-20 bg-brand-canvas border-b border-brand-border">
+        <section className="py-16 sm:py-20 bg-brand-canvas border-b border-brand-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-gold-deep">
@@ -116,7 +120,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Optional Thin Strip CTA to Contact */}
+        {/* Thin Strip CTA to Contact */}
         <section className="py-8 bg-brand-dark text-white border-b border-brand-green-light/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
