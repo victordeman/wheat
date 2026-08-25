@@ -29,3 +29,20 @@ body {
   background-color: var(--background);
   color: var(--foreground);
 }
+
+/* Custom Reusable Utility Classes */
+@utility card-gov {
+  background-color: #F1F1EB;
+  border: 1px solid #E5E5DC;
+  transition: all 0.2s ease-in-out;
+}
+
+@utility gold-accent-line {
+  height: 2px;
+  background: linear-gradient(90deg, #DAA520 0%, #C59B27 100%);
+}
+
+@utility dark-translucent-overlay {
+  background-color: rgba(15, 56, 44, 0.85);
+  backdrop-filter: blur(8px);
+}
