@@ -1,20 +1,17 @@
 import React from "react";
 import Image from "next/image";
-import { Card } from "@/components/ui/Card";
+import { SectionHeading, Card } from "@/components/ui";
 
 export const ImpactSection: React.FC = () => {
   return (
     <section id="impact" className="py-20 bg-brand-dark text-white border-b border-brand-green-light/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
-        <div className="max-w-3xl space-y-4">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-gold">
-            Key Programme Impact Areas
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-            The work is visible in fields, mills and bakeries.
-          </h2>
-        </div>
+        <SectionHeading
+          variant="dark"
+          eyebrow="Key Programme Impact Areas"
+          title="The work is visible in fields, mills and bakeries."
+        />
 
         {/* 3 Showcase Visual Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

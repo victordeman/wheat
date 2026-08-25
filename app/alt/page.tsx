@@ -1,14 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Card, Badge } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card, Badge, Button, StatCard, GovernanceLeaderCard, PathwayCard } from "@/components/ui";
 import { BASELINE_STATS, PROGRAMME_OBJECTIVES, LEADERSHIP_PROFILES, PATHWAYS } from "@/lib/data";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { ArrowUpRight, CheckSquare, ShieldCheck } from "lucide-react";
 
 export default function AltPage() {
   const [selectedPathway, setSelectedPathway] = useState<string>("public");
@@ -56,20 +53,15 @@ export default function AltPage() {
         <section id="alt-stats" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {BASELINE_STATS.map((stat, idx) => (
-              <div key={idx} className="bg-[#141814] border border-gray-800 p-6 flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] uppercase tracking-widest text-brand-gold font-mono">
-                    METRIC 0{idx + 1}
-                  </span>
-                  <div className="font-serif text-3xl font-bold text-white mt-1">
-                    {stat.value}
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-gray-800/80">
-                  <div className="text-xs font-semibold text-gray-300">{stat.label}</div>
-                  <div className="text-[11px] text-gray-500 mt-0.5">{stat.subtext}</div>
-                </div>
-              </div>
+              <StatCard
+                key={idx}
+                variant="dark"
+                value={stat.value}
+                label={stat.label}
+                subtext={stat.subtext}
+                valueColor="text-white"
+                className="bg-[#141814] border-gray-800"
+              />
             ))}
           </div>
         </section>
@@ -111,23 +103,14 @@ export default function AltPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {LEADERSHIP_PROFILES.map((leader, idx) => (
-                <div key={idx} className="bg-[#141814] border border-gray-800 p-6 flex items-center gap-6">
-                  <div className="relative w-24 h-28 flex-shrink-0 border border-gray-700">
-                    <Image
-                      src={leader.image}
-                      alt={leader.name}
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Badge variant="green" className="bg-brand-green/30 text-emerald-400 border-emerald-800">
-                      {leader.role}
-                    </Badge>
-                    <h3 className="font-serif text-xl font-bold text-white">{leader.name}</h3>
-                    <p className="text-xs text-gray-400 leading-relaxed">{leader.title}</p>
-                  </div>
-                </div>
+                <GovernanceLeaderCard
+                  key={idx}
+                  variant="dark"
+                  name={leader.name}
+                  role={leader.role}
+                  title={leader.title}
+                  image={leader.image}
+                />
               ))}
             </div>
           </div>
@@ -142,20 +125,15 @@ export default function AltPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {PATHWAYS.map((p) => (
-                <div key={p.id} className="bg-[#141814] border border-gray-800 p-6 flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-serif text-xl font-bold text-white">{p.title}</h3>
-                    <p className="text-xs text-gray-400 leading-relaxed">{p.description}</p>
-                  </div>
-                  <a
-                    href="#contact"
-                    onClick={() => setSelectedPathway(p.id)}
-                    className="inline-flex items-center gap-1.5 text-xs font-mono text-brand-gold uppercase hover:underline"
-                  >
-                    <span>{p.actionText}</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
+                <PathwayCard
+                  key={p.id}
+                  variant="dark"
+                  id={p.id}
+                  title={p.title}
+                  description={p.description}
+                  actionText={p.actionText}
+                  onSelect={(id) => setSelectedPathway(id)}
+                />
               ))}
             </div>
           </div>

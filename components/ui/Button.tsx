@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "gold";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "gold" | "green";
   size?: "sm" | "md" | "lg";
 }
 
@@ -18,7 +18,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold disabled:pointer-events-none disabled:opacity-50 cursor-pointer rounded-none uppercase tracking-wider text-xs md:text-sm";
+      "inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark disabled:pointer-events-none disabled:opacity-50 cursor-pointer rounded-none uppercase tracking-wider text-xs md:text-sm";
 
     const variants = {
       primary:
@@ -27,6 +27,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         "bg-brand-card text-brand-dark hover:bg-brand-border border border-brand-border",
       gold:
         "bg-brand-gold text-brand-dark font-semibold hover:bg-brand-gold-deep border border-brand-gold",
+      green:
+        "bg-brand-green text-white font-medium hover:bg-brand-dark border border-brand-green",
       outline:
         "border border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white",
       ghost:
