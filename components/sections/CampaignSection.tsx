@@ -1,103 +1,47 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { BASELINE_STATS, CHALLENGE_TABS } from "@/lib/data";
-import { SectionHeading, StatCard } from "@/components/ui";
-import { cn } from "@/components/ui/Button";
+import { SectionHeading, Button, Card } from "@/components/ui";
 
-export const ChallengeSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(CHALLENGE_TABS[0].id);
-
-  const currentTabData =
-    CHALLENGE_TABS.find((t) => t.id === activeTab) || CHALLENGE_TABS[0];
-
+export const CampaignSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-brand-canvas border-b border-brand-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="campaign" className="py-20 bg-brand-canvas border-b border-brand-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column: Text & CTA */}
+          <div className="lg:col-span-7 space-y-6">
+            <SectionHeading
+              eyebrow="Made-in-Nigeria"
+              title="Food that is baked, milled and bought at home."
+              description="The consumer campaign is the demand side of the programme — a public invitation to choose wheat foods produced in Nigerian mills and MSME bakeries."
+            />
 
-        {/* Header & Baseline Stat Grid */}
-        <div className="space-y-8">
-          <SectionHeading
-            eyebrow="About the Programme"
-            title="Nigeria consumes wheat at industrial scale, but produces almost none of it."
-            description="An imbalance that shapes the price of bread, noodles, pasta and other staples in every market in the Federation."
-          />
+            <p className="text-base text-gray-700 leading-relaxed">
+              By connecting local processing capacity directly to household demand, Project WHEAT-NESS creates market certainty for domestic millers and bakers while supporting national food security.
+            </p>
 
-          {/* Stat Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {BASELINE_STATS.map((stat, idx) => (
-              <StatCard
-                key={idx}
-                value={stat.value}
-                label={stat.label}
-                subtext={stat.subtext}
-                variant="default"
-                accentBorderPosition="top"
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Interactive Tab Switcher Block */}
-        <div className="bg-brand-card border border-brand-border p-6 sm:p-10 space-y-8">
-          {/* Tabs header */}
-          <div className="flex flex-wrap gap-2 border-b border-brand-border pb-4" role="tablist">
-            {CHALLENGE_TABS.map((tab) => (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                aria-controls={`tabpanel-${tab.id}`}
-                id={`tab-${tab.id}`}
-                onClick={() => setActiveTab(tab.id)}
-                className={cn(
-                  "px-5 py-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all cursor-pointer border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
-                  activeTab === tab.id
-                    ? "border-brand-gold text-brand-dark bg-white shadow-xs"
-                    : "border-transparent text-gray-600 hover:text-brand-dark hover:bg-white/50"
-                )}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Active Tab Content */}
-          <div
-            id={`tabpanel-${activeTab}`}
-            role="tabpanel"
-            aria-labelledby={`tab-${activeTab}`}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
-          >
-            <div className="lg:col-span-7 space-y-4">
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-brand-dark">
-                {currentTabData.title}
-              </h3>
-              <p className="text-base text-gray-700 leading-relaxed">
-                {currentTabData.body}
-              </p>
-            </div>
-
-            <div className="lg:col-span-5 relative h-64 sm:h-80 w-full overflow-hidden border border-brand-border">
-              <Image
-                src={
-                  activeTab === "challenge"
-                    ? "https://wheatness-test.vercel.app/images/farmers-wheat-field.jpg"
-                    : activeTab === "evidence"
-                    ? "https://wheatness-test.vercel.app/images/photo-bakery.jpg"
-                    : activeTab === "consequence"
-                    ? "https://wheatness-test.vercel.app/images/photo-grain-pile.jpg"
-                    : "https://wheatness-test.vercel.app/images/photo-mill.jpg"
-                }
-                alt={currentTabData.title}
-                fill
-                className="object-cover transition-all duration-300"
-              />
+            <div className="pt-2">
+              <a href="#involved">
+                <Button variant="primary" size="lg">
+                  Join the campaign
+                </Button>
+              </a>
             </div>
           </div>
-        </div>
 
+          {/* Right Column: Visual Image Panel */}
+          <div className="lg:col-span-5">
+            <Card className="p-0 border border-brand-border overflow-hidden bg-white shadow-xs">
+              <div className="relative h-72 sm:h-96 w-full">
+                <Image
+                  src="https://wheatness-test.vercel.app/images/photo-bakery.jpg"
+                  alt="Freshly baked Nigerian bread and wheat foods in a local bakery"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );
