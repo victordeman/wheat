@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Card";
 import { ArrowRight } from "lucide-react";
-import { BASELINE_STATS } from "@/lib/data";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -51,12 +50,22 @@ export const HeroSection: React.FC = () => {
 
         {/* Floating Stat Accent Bar */}
         <div className="mt-16 pt-8 border-t border-brand-green-light/40 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
-          {BASELINE_STATS.map((stat, idx) => (
-            <div key={idx}>
-              <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">{stat.value}</div>
-              <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">{stat.label}</div>
-            </div>
-          ))}
+          <div>
+            <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">~4.3m MT</div>
+            <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">Wheat Imported / Year</div>
+          </div>
+          <div>
+            <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">$3bn+</div>
+            <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">Annual FX Outlay</div>
+          </div>
+          <div>
+            <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">~50%</div>
+            <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">Milling Utilisation</div>
+          </div>
+          <div>
+            <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">72%</div>
+            <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">SME Bakery Market Share</div>
+          </div>
         </div>
       </div>
     </section>
