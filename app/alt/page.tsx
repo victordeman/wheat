@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Card, Badge, Button, StatCard, GovernanceLeaderCard, PathwayCard } from "@/components/ui";
+import { Badge, Button, StatCard, GovernanceLeaderCard, PathwayCard } from "@/components/ui";
 import { BASELINE_STATS, PROGRAMME_OBJECTIVES, LEADERSHIP_PROFILES, PATHWAYS } from "@/lib/data";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { ContactFormData } from "@/lib/validation";
 
 export default function AltPage() {
-  const [selectedPathway, setSelectedPathway] = useState<string>("public");
+  const [selectedPathway, setSelectedPathway] = useState<ContactFormData["pathway"]>("public");
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-[#0D0F0D] text-gray-100 selection:bg-brand-gold selection:text-brand-dark">
@@ -71,7 +72,7 @@ export default function AltPage() {
           <div className="border border-gray-800 bg-[#141814] p-8 md:p-12 space-y-8">
             <div className="space-y-2 border-b border-gray-800 pb-6">
               <span className="text-xs font-mono uppercase tracking-widest text-brand-gold">
-                // EXECUTIVE MANDATE
+                &#47;&#47; EXECUTIVE MANDATE
               </span>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">
                 Four Objectives & Pillar Architecture
@@ -82,7 +83,7 @@ export default function AltPage() {
               {PROGRAMME_OBJECTIVES.map((pillar) => (
                 <div key={pillar.id} className="p-6 border border-gray-800 bg-[#0D0F0D] space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="font-mono text-xs text-brand-gold">{pillar.id} // OBJECTIVE</span>
+                    <span className="font-mono text-xs text-brand-gold">{pillar.id} &#47;&#47; OBJECTIVE</span>
                     <Badge variant="gold" className="text-[9px]">{pillar.tag.split(":")[0]}</Badge>
                   </div>
                   <h3 className="font-serif text-xl font-bold text-white">{pillar.title}</h3>
@@ -132,7 +133,7 @@ export default function AltPage() {
                   title={p.title}
                   description={p.description}
                   actionText={p.actionText}
-                  onSelect={(id) => setSelectedPathway(id)}
+                  onSelect={(id) => setSelectedPathway(id as ContactFormData["pathway"])}
                 />
               ))}
             </div>
