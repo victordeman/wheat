@@ -4,7 +4,10 @@ import { Logo } from "@/components/SVG/Logo";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-charcoal text-white border-t border-brand-dark pt-16 pb-12">
+    <footer className="bg-brand-charcoal text-white border-t border-brand-dark pt-16 pb-12" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-gray-800">
           {/* Main Info */}
@@ -25,27 +28,42 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a href="#about" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#about"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   About the Programme
                 </a>
               </li>
               <li>
-                <a href="#programme" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#programme"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   Objectives & Pillars
                 </a>
               </li>
               <li>
-                <a href="#impact" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#impact"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   Impact & Numbers
                 </a>
               </li>
               <li>
-                <a href="#governance" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#governance"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   Governance & Leadership
                 </a>
               </li>
               <li>
-                <a href="#campaign" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#campaign"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   Made-in-Nigeria Campaign
                 </a>
               </li>
@@ -59,22 +77,34 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a href="#involved" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#involved"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   Millers & Processing Partners
                 </a>
               </li>
               <li>
-                <a href="#involved" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#involved"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   MSME Bakery Enterprises
                 </a>
               </li>
               <li>
-                <a href="#involved" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#involved"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   Investors & Organised Private Sector
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-brand-gold transition-colors">
+                <a
+                  href="#contact"
+                  className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                >
                   Programme Delivery Unit Contact
                 </a>
               </li>
@@ -90,7 +120,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <Link
               href="/alt"
-              className="text-brand-gold hover:underline font-medium"
+              className="text-brand-gold hover:underline font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
             >
               View Alternate UI →
             </Link>
