@@ -13,9 +13,10 @@ import { ImpactSection } from "@/components/sections/ImpactSection";
 import { CampaignSection } from "@/components/sections/CampaignSection";
 import { PathwaysSection } from "@/components/sections/PathwaysSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { ContactFormData } from "@/lib/validation";
 
 export default function Home() {
-  const [selectedPathway, setSelectedPathway] = useState<string>("public");
+  const [selectedPathway, setSelectedPathway] = useState<ContactFormData["pathway"]>("public");
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-brand-canvas">
@@ -29,7 +30,7 @@ export default function Home() {
         <ParallelTracksSection />
         <ImpactSection />
         <CampaignSection />
-        <PathwaysSection onSelectPathway={(p) => setSelectedPathway(p)} />
+        <PathwaysSection onSelectPathway={(p) => setSelectedPathway(p as ContactFormData["pathway"])} />
         <ContactSection defaultPathway={selectedPathway} />
       </main>
       <Footer />
