@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { SectionHeading, Button, Card } from "@/components/ui";
 
 export const CampaignSection: React.FC = () => {
@@ -20,11 +21,11 @@ export const CampaignSection: React.FC = () => {
             </p>
 
             <div className="pt-2">
-              <a href="#involved">
+              <Link href="/involved">
                 <Button variant="primary" size="lg">
                   Join the campaign
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
 
