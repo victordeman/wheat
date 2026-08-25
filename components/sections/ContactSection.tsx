@@ -10,7 +10,7 @@ import { Card } from "@/components/ui/Card";
 import { CheckCircle, AlertCircle, Loader2, MapPin, Mail, Phone } from "lucide-react";
 
 interface ContactSectionProps {
-  defaultPathway?: string;
+  defaultPathway?: ContactFormData["pathway"];
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
@@ -35,14 +35,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
       fullName: "",
       organisation: "",
       email: "",
-      pathway: (defaultPathway as any) || "public",
+      pathway: defaultPathway || "public",
       message: "",
     },
   });
 
   useEffect(() => {
     if (defaultPathway) {
-      setValue("pathway", defaultPathway as any);
+      setValue("pathway", defaultPathway);
     }
   }, [defaultPathway, setValue]);
 
@@ -71,7 +71,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           responseData.message || "Failed to submit correspondence. Please try again."
         );
       }
-    } catch (err) {
+    } catch {
       setErrorResponse(
         "A network error occurred while dispatching your request."
       );
