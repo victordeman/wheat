@@ -108,13 +108,13 @@ export const LEADERSHIP_PROFILES: LeadershipItem[] = [
     name: "Senator John Owan Enoh",
     title: "Honourable Minister of State for Industry, Trade and Investment",
     role: "Chairman, Steering Committee",
-    image: "https://wheatness-test.vercel.app/images/senator.jpg",
+    image: "/images/senator.jpg",
   },
   {
     name: "Gerald Okunsebor",
     title: "National Programme Coordinator, Project WHEAT-NESS",
     role: "Programme Delivery Unit",
-    image: "https://wheatness-test.vercel.app/images/Gerald.jpg",
+    image: "/images/Gerald.jpg",
   },
 ];
 
@@ -141,13 +141,13 @@ export const PARALLEL_TRACKS = [
     title: "Miller Diversification",
     subtitle: "Industry",
     description: "Encourage millers to deepen participation in the consumer-foods chain not only as processors of imported grain, but as partners in offtake, product range and market stability.",
-    image: "https://wheatness-test.vercel.app/images/photo-mill-2.jpg",
+    image: "/images/photo-mill-2.jpg",
   },
   {
     title: "Research & Domestic Production",
     subtitle: "Agronomy & Long Horizon",
     description: "A longer track: research, agronomy and production systems that can raise Nigeria’s own wheat output from today’s ~60,000 MT baseline.",
-    image: "https://wheatness-test.vercel.app/images/photo-wheat-blue.jpg",
+    image: "/images/photo-wheat-blue.jpg",
   },
 ];
 
@@ -157,27 +157,27 @@ export const PATHWAYS: PathwayItem[] = [
     title: "Millers",
     description: "Bring installed capacity into structured offtake arrangements and processing alignment.",
     actionText: "Start a conversation",
-    image: "https://wheatness-test.vercel.app/images/photo-mill.jpg",
+    image: "/images/photo-mill.jpg",
   },
   {
     id: "msmes",
     title: "MSMEs",
     description: "Bakeries and wheat-food enterprises seeking flour access and enterprise support.",
     actionText: "Register interest",
-    image: "https://wheatness-test.vercel.app/images/photo-bakery.jpg",
+    image: "/images/photo-bakery.jpg",
   },
   {
     id: "investors",
     title: "Investors & OPS",
     description: "Organised private sector and capital partners for fund capitalisation and industrial scale.",
     actionText: "Request a briefing",
-    image: "https://wheatness-test.vercel.app/images/photo-silos.png",
+    image: "/images/photo-silos.png",
   },
   {
     id: "public",
     title: "General Public",
     description: "Households, journalists and citizens following the programme or raising a concern.",
     actionText: "Write to us",
-    image: "https://wheatness-test.vercel.app/images/farmers-wheat-field.jpg",
+    image: "/images/farmers-wheat-field.jpg",
   },
 ];

@@ -19,7 +19,7 @@ export const ImpactSection: React.FC = () => {
           <Card variant="dark" className="p-0 border border-brand-green-light/40 overflow-hidden space-y-4">
             <div className="relative h-52 w-full">
               <Image
-                src="https://wheatness-test.vercel.app/images/photo-wheat-ears.jpg"
+                src="/images/photo-wheat-ears.jpg"
                 alt="Close view of ripening wheat ears in late sun"
                 fill
                 className="object-cover"
@@ -42,7 +42,7 @@ export const ImpactSection: React.FC = () => {
           <Card variant="dark" className="p-0 border border-brand-green-light/40 overflow-hidden space-y-4">
             <div className="relative h-52 w-full">
               <Image
-                src="https://wheatness-test.vercel.app/images/photo-mill.jpg"
+                src="/images/photo-mill.jpg"
                 alt="Roller mill interior used for wheat processing"
                 fill
                 className="object-cover"
@@ -65,7 +65,7 @@ export const ImpactSection: React.FC = () => {
           <Card variant="dark" className="p-0 border border-brand-green-light/40 overflow-hidden space-y-4">
             <div className="relative h-52 w-full">
               <Image
-                src="https://wheatness-test.vercel.app/images/photo-nigerian-pastries.jpg"
+                src="/images/photo-nigerian-pastries.jpg"
                 alt="Hands scoring a loaf before it goes to market"
                 fill
                 className="object-cover"

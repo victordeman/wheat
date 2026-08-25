@@ -83,12 +83,12 @@ export const ChallengeSection: React.FC = () => {
               <Image
                 src={
                   activeTab === "challenge"
-                    ? "https://wheatness-test.vercel.app/images/farmers-wheat-field.jpg"
+                    ? "/images/farmers-wheat-field.jpg"
                     : activeTab === "evidence"
-                    ? "https://wheatness-test.vercel.app/images/photo-bakery.jpg"
+                    ? "/images/photo-bakery.jpg"
                     : activeTab === "consequence"
-                    ? "https://wheatness-test.vercel.app/images/photo-grain-pile.jpg"
-                    : "https://wheatness-test.vercel.app/images/photo-mill.jpg"
+                    ? "/images/photo-grain-pile.jpg"
+                    : "/images/photo-mill.jpg"
                 }
                 alt={currentTabData.title}
                 fill

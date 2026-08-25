@@ -33,7 +33,7 @@ export const CampaignSection: React.FC = () => {
             <Card className="p-0 border border-brand-border overflow-hidden bg-white shadow-xs">
               <div className="relative h-72 sm:h-96 w-full">
                 <Image
-                  src="https://wheatness-test.vercel.app/images/photo-bakery.jpg"
+                  src="/images/photo-bakery.jpg"
                   alt="Freshly baked Nigerian bread and wheat foods in a local bakery"
                   fill
                   className="object-cover"
