@@ -28,44 +28,44 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a
-                  href="#about"
+                <Link
+                  href="/about"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   About the Programme
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#programme"
+                <Link
+                  href="/programme"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   Objectives & Pillars
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#impact"
+                <Link
+                  href="/about#impact"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   Impact & Numbers
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#governance"
+                <Link
+                  href="/governance"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   Governance & Leadership
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#campaign"
+                <Link
+                  href="/about#campaign"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   Made-in-Nigeria Campaign
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -77,36 +77,36 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a
-                  href="#involved"
+                <Link
+                  href="/involved"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   Millers & Processing Partners
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#involved"
+                <Link
+                  href="/involved"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   MSME Bakery Enterprises
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#involved"
+                <Link
+                  href="/involved"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   Investors & Organised Private Sector
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   Programme Delivery Unit Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

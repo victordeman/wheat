@@ -20,7 +20,7 @@ export const FinancingSection: React.FC = () => {
             badgeText="Track 1"
             title="Direct Programme Activities"
             description="Operational work across milling, MSME production, logistics and consumer campaigning."
-            image="https://wheatness-test.vercel.app/images/photo-mill.jpg"
+            image="/images/photo-mill.jpg"
             imageAlt="Interior of an industrial flour mill"
             accentColor="green"
             features={[
@@ -36,7 +36,7 @@ export const FinancingSection: React.FC = () => {
             badgeText="Track 2"
             title="Fund Capitalisation"
             description="The financial spine of the programme: a self-renewing development fund designed to recycle capital into the chain."
-            image="https://wheatness-test.vercel.app/images/photo-silos-2.jpg"
+            image="/images/photo-silos-2.jpg"
             imageAlt="Industrial grain storage facility"
             accentColor="gold"
             features={[

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Card";
 import { ArrowRight } from "lucide-react";
@@ -10,7 +11,7 @@ export const HeroSection: React.FC = () => {
       {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0 opacity-25">
         <Image
-          src="https://wheatness-test.vercel.app/images/hero-wheat.jpg"
+          src="/images/hero-wheat.jpg"
           alt="Golden wheat fields at sunrise across rolling hills"
           fill
           priority
@@ -34,17 +35,17 @@ export const HeroSection: React.FC = () => {
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-            <a href="#programme">
+            <Link href="/programme">
               <Button variant="gold" size="lg" className="w-full sm:w-auto flex items-center justify-center gap-2">
                 <span>Explore the Programme</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
-            </a>
-            <a href="#about">
+            </Link>
+            <Link href="/about">
               <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-brand-dark">
                 Why it matters
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
 

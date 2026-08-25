@@ -8,12 +8,12 @@ import { Logo } from "@/components/SVG/Logo";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "The Programme", href: "#programme" },
-  { name: "Governance", href: "#governance" },
-  { name: "Get Involved", href: "#involved" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "The Programme", href: "/programme" },
+  { name: "Governance", href: "/governance" },
+  { name: "Get Involved", href: "/involved" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const Header: React.FC = () => {
@@ -62,15 +62,22 @@ export const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-6" aria-label="Main Navigation">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={isAltPage ? `/${link.href}` : link.href}
-              className="text-xs uppercase tracking-wider font-medium text-gray-200 hover:text-brand-gold transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-xs"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-xs uppercase tracking-wider font-medium transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-xs ${
+                  isActive
+                    ? "text-brand-gold font-semibold border-b-2 border-brand-gold"
+                    : "text-gray-200 hover:text-brand-gold"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Actions */}
@@ -85,11 +92,11 @@ export const Header: React.FC = () => {
               <span>{isAltPage ? "Primary UI" : "↹ Alternate UI"}</span>
             </Button>
           </Link>
-          <a href="#involved">
+          <Link href="/involved">
             <Button variant="gold" size="sm">
               Get Involved
             </Button>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -116,16 +123,21 @@ export const Header: React.FC = () => {
           className="lg:hidden bg-brand-dark border-b border-brand-green-light/40 px-4 pt-2 pb-6 space-y-4 animate-in slide-in-from-top duration-200"
         >
           <nav className="flex flex-col space-y-3" aria-label="Mobile Navigation">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={isAltPage ? `/${link.href}` : link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm uppercase tracking-wider font-medium text-gray-200 hover:text-brand-gold py-1.5 border-b border-brand-green-light/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm uppercase tracking-wider font-medium py-1.5 border-b border-brand-green-light/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
+                    isActive ? "text-brand-gold font-semibold" : "text-gray-200 hover:text-brand-gold"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
           <div className="flex flex-col gap-2 pt-2">
             <Link href={isAltPage ? "/" : "/alt"} onClick={() => setMobileMenuOpen(false)}>
@@ -138,11 +150,11 @@ export const Header: React.FC = () => {
                 <span>{isAltPage ? "Primary UI" : "↹ Alternate UI"}</span>
               </Button>
             </Link>
-            <a href="#involved" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/involved" onClick={() => setMobileMenuOpen(false)}>
               <Button variant="gold" size="sm" className="w-full justify-center">
                 Get Involved
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       )}
