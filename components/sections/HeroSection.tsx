@@ -59,12 +59,12 @@ export const HeroSection: React.FC = () => {
             <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">Annual FX Outlay</div>
           </div>
           <div>
-            <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">~50%</div>
-            <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">Milling Utilisation</div>
+            <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">~60,000 MT</div>
+            <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">Domestic Production</div>
           </div>
           <div>
-            <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">72%</div>
-            <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">SME Bakery Market Share</div>
+            <div className="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">~50%</div>
+            <div className="text-xs uppercase tracking-wider text-gray-300 mt-1">Milling Utilisation</div>
           </div>
         </div>
       </div>
